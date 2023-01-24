@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-8">
+
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                                    Delete File</p>
+                                <p class="text-center h5 mb-5 mx-1 mx-md-4 mt-4"> Do you really want to delete {{ object.file }}?</p>
+
+                                <form class="form" action="" method="POST">
+                                    {% csrf_token %}
+
+                                    <div class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                                    <a class="btn btn-outline-dark"
+                                       href="{% url 'core:files_list_view' %}">Back</a>
+
+                                    <input class="btn btn-danger" type="submit" value="Delete"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
